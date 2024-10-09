@@ -62,7 +62,7 @@ def tone():
     input_text = request.json['input_text']
     log.info("input text is '%s'", input_text)
     tone_doc = analyze_tone(input_text)
-    return (json.dumps(tone_doc), 200)
+    return (json.dumps(tone_doc), 200, {'Content-Type': 'application/json'})
 
 
 @app.route('/', methods=['GET'])
